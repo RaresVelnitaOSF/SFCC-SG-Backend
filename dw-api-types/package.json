@@ -1,0 +1,26 @@
+{
+  "author": {
+    "name": "SqrTT"
+  },
+  "dependencies": {},
+  "description": "dw types",
+  "devDependencies": {},
+  "homepage": "https://bitbucket.org/SqrTT/dwtypes#readme",
+  "keywords": [
+    "demandware",
+    "typings"
+  ],
+  "license": "ISC",
+  "main": "global",
+  "name": "dw",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/SqrTT/dwtypes.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.0"
+}
