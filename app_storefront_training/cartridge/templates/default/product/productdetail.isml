@@ -10,6 +10,8 @@
             <isinclude template="product/producttopcontent" />
         </isif>
 
+        <isinclude url="${URLUtils.url('ProductRecommendations-Start', 'cgid' , pdict.Product.primaryCategory.ID)}"/>
+
     </div><!--/pdpMain -->
 </isobject>
 <isslot id="recomm-prod-anchor" description="Product page slot" context="global" context-object="${pdict.Product}"/>
