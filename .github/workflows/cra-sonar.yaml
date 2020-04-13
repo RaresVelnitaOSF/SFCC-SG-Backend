@@ -1,0 +1,28 @@
+name: "Code Review Assistant - Sonar"
+
+on:
+    pull_request:
+        branches:
+            - "develop"
+        paths:
+            - "**.js"
+
+jobs:
+    CRAa944f6a8-319e-4abb-899c-df6b044c8654:
+        runs-on: "ubuntu-latest"
+        steps:
+            - name: "Checkout"
+              uses: "actions/checkout@v1"
+              with:
+                  fetch-depth: 1
+
+            - name: "Setup NodeJS"
+              uses: "actions/setup-node@v1"
+              with:
+                  node-version: "12.x"
+
+            - name: "SonarLinter"
+              uses: "OSFGlobal/CodeReviewAssistant-SonarLinter@v1"
+              with:
+                  azureAccount: ${{ secrets.AZURE_ACCOUNT }}
+                  azureKey: ${{ secrets.AZURE_KEY }}

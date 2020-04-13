@@ -100,7 +100,13 @@
     "build:watch": "npm run js -- -w & npm run css -- -w",
     "preversion": "version > old_version",
     "version": "node bin/version.js && rm old_version && git add .",
-    "doc": "sh bin/doc.sh"
+    "doc": "sh bin/doc.sh",
+    "lint:js": "osf-linter --linter=JS",
+    "lint:scss": "osf-linter --linter=SCSS",
+    "lint:isml": "osf-linter --linter=ISML",
+    "fix:js": "osf-fixer --fixer=JS",
+    "fix:scss": "osf-fixer --fixer=SCSS",
+    "fix:isml": "osf-fixer --fixer=ISML"
   },
   "repository": {
     "type": "git",
