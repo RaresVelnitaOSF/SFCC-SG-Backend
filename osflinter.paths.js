@@ -4,7 +4,7 @@ module.exports.JS = [
 ];
 
 module.exports.SCSS = [
-    "app_storefront_training/cartridge/client/*/css/**/*.scss"
+    "app_storefront_training/cartridge/scss/*/*.scss"
 ];
 
 module.exports.ISML = [

@@ -2,6 +2,7 @@
 
 var guard = require("app_storefront_controllers/cartridge/scripts/guard");
 var ISML = require("dw/template/ISML"); 
+var request;
 
 function start() {
     var categoryID = request.httpParameterMap.cgid.stringValue;
@@ -18,14 +19,14 @@ function start() {
     
         productSearchModel.search();
     
-        var productsFound = productSearchModel.getProductSearchHits().asList(0,4);
+        var productsFound = productSearchModel.getProductSearchHits().asList(0, 4);
         
         ISML.renderTemplate(
-           "productRecommendations",{
+            "productRecommendations", {
                 productsFound : productsFound
             }
         );
     }
-};
+}
 
-exports.Start = guard.ensure(['get'], start);
+exports.Start = guard.ensure(["get"], start);
