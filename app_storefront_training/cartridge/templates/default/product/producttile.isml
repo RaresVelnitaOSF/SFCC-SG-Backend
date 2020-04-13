@@ -172,7 +172,8 @@
                     var extraPrice = {};
                     var prices = [];
                     var promos = PromotionMgr.getActiveCustomerPromotions().getProductPromotions(Product);
-
+                    var percentageSaved;
+                    
                     // simulate the same if else block from before the template include break
                     if (!Product.productSet && pdict.CurrentHttpParameterMap.pricerange.stringValue != 'true' && !promos.length) {
                         SalesPrice = PriceModel.getPrice();
@@ -184,6 +185,7 @@
                             extraPrice.class = 'product-sales-price';
                             extraPrice.title = Resource.msg('product.saleprice', 'product', null);
                             extraPrice.value = SalesPrice;
+                            extraPrice.percentageSaved = Math.round(((StandardPrice - SalesPrice)/StandardPrice)*100);
                         } else {
                             price.class = 'product-sales-price';
                             price.title = Resource.msg('product.saleprice', 'product', null);
@@ -241,6 +243,11 @@
                 </isscript>
                 <isloop items="${prices}" var="productPrice">
                     <span class="${productPrice.class}" title="${productPrice.title}"><isprint value="${productPrice.value}"/></span>
+                        <isif condition="${productPrice.percentageSaved}">
+                            <h1 class="bestDealText"> 
+                                <isprint value="${Resource.msgf('alert.bestdeal','messages', null, productPrice.percentageSaved)}"/>
+                            </h1>
+                        </isif>
                 </isloop>
             </div>
         </isif>
