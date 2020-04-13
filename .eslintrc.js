@@ -1,1 +1,0 @@
-module.exports = require("@osf-global/linter/config/.eslintrc");
