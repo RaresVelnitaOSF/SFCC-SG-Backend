@@ -1,0 +1,1 @@
+${Resource.msgf('productfoundMessage', 'myBundle',null, pdict.myProduct.name)}
