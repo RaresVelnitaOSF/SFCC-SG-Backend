@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<users xmlns="http://www.demandware.com/xml/impex/user/2007-09-05">
+    <user login="admin" enabled-flag="true">
+        <credentials>
+            <password encrypted="true" encryptionScheme="scrypt">$s0$b0401$DbmUGwakG8x+Tvn2pbHciw==$FHX5rWlevsZGEu7UMUu94ip8y787Qi+kni4YLYvzTOc=</password>
+            <password-question>Middle name of your oldest child?</password-question>
+            <password-answer encrypted="true">$s0$b0401$wO9kCIr1Y6aPzq8flE6CHA==$8DIQNOzq37pGgEjPXu3tLvtX7phOq9BpxuykI/07guE=</password-answer>
+        </credentials>
+        <profile>
+            <first-name>Admin</first-name>
+            <last-name>Admin</last-name>
+            <email>dwsb@osf-global.com</email>
+        </profile>
+        <access-roles>
+            <access-role role-id="Administrator"/>
+        </access-roles>
+    </user>
+
+    <user login="rares.velnita@osf.digital" enabled-flag="true">
+        <credentials>
+            <password encrypted="true" encryptionScheme="scrypt">$s0$b0401$XoQpOnf/vjU+e69jCmyILg==$x6M1LP+SL3PySnhoOzyVRTqXZlUSmMDvuZU6ko+zXjg=</password>
+            <password-question>Name of your first school?</password-question>
+            <password-answer encrypted="true">$s0$b0401$SFWzVTsXYEeCjt7gvsGH8Q==$O7iF7/9CVHjS1XBphBZW7nmWZ2X0tn+Vp+siy1e2VFI=</password-answer>
+        </credentials>
+        <profile>
+            <first-name>Rares</first-name>
+            <last-name>Velnita</last-name>
+            <email>rares.velnita@osf.digital</email>
+            <preferred-data-locale>none</preferred-data-locale>
+        </profile>
+        <access-roles>
+            <access-role role-id="Administrator"/>
+        </access-roles>
+    </user>
+
+    <user login="sorin.chircu@osf.digital" enabled-flag="true">
+        <credentials>
+            <password encrypted="true" encryptionScheme="scrypt">$s0$b0401$dlcKvaXn3H8HqUPrZN45RQ==$kFmmxnUkduxjA6naEjkM8jlTSfV/mpR05vG6xCjXU5E=</password>
+            <password-question/>
+            <password-answer encrypted="true"/>
+        </credentials>
+        <profile>
+            <first-name>Sorin</first-name>
+            <last-name>Chircu</last-name>
+            <email>sorin.chircu@osf.digital</email>
+            <preferred-data-locale>none</preferred-data-locale>
+        </profile>
+        <access-roles>
+            <access-role role-id="Administrator"/>
+        </access-roles>
+    </user>
+
+</users>
