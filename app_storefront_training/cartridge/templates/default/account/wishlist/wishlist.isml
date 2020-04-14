@@ -100,6 +100,11 @@
                             </td>
                             <td class="item-details">
                                 <isdisplayproductlistitem p_productli="${item.object}"/>
+                                
+                                <iscomment> Controller to send email with the last wishlist added item </iscomment>
+                                <isif condition="${loopstate.last}">
+                                    <isinclude url="${URLUtils.url('SendEmail-SendWishlistEmail', 'productID' , item.object.productID, 'customerEmail', session.customer.profile.email)}"/>
+                                </isif>
 
                                 <isif condition="${item.object.type != isGiftCert && item.object.product != null}">
 
