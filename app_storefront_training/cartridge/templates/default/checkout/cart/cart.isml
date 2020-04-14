@@ -813,6 +813,8 @@
                     </tfoot>
                 </table>
 
+                <isinclude url="${URLUtils.url('Custom-Start', 'basketTotal' , pdict.Basket.getAdjustedMerchandizeTotalPrice(false).decimalValue)}"/>
+
                 <div class="cart-footer">
 
                     <input type="hidden" name="${pdict.CurrentForms.cart.updateCart.htmlName}" value="${pdict.CurrentForms.cart.updateCart.htmlName}"/>
