@@ -4489,6 +4489,16 @@
         </custom-attributes>
     </category>
 
+    <category category-id="sortedByBrandJob">
+        <display-name xml:lang="x-default">Sorted By Brand</display-name>
+        <description xml:lang="x-default">Products sorted by brand by the Job</description>
+        <online-flag>true</online-flag>
+        <parent>root</parent>
+        <position>15.0</position>
+        <template/>
+        <page-attributes/>
+    </category>
+
     <category category-id="hidden">
         <display-name xml:lang="x-default">Hidden Category</display-name>
         <display-name xml:lang="fr-FR">Catégorie masquée</display-name>
@@ -8123,6 +8133,48 @@
     <category-assignment category-id="sale-womens-dresses" product-id="25589481"/>
 
     <category-assignment category-id="sale-womens-dresses" product-id="25591426"/>
+
+    <category-assignment category-id="sortedByBrandJob" product-id="samsung-hl67a510">
+        <position>auto</position>
+    </category-assignment>
+
+    <category-assignment category-id="sortedByBrandJob" product-id="samsung-ypk3">
+        <position>auto</position>
+    </category-assignment>
+
+    <category-assignment category-id="sortedByBrandJob" product-id="samsung-hl67a750">
+        <position>auto</position>
+    </category-assignment>
+
+    <category-assignment category-id="sortedByBrandJob" product-id="samsung-hl72a650">
+        <position>auto</position>
+    </category-assignment>
+
+    <category-assignment category-id="sortedByBrandJob" product-id="samsung-ln22a650">
+        <position>auto</position>
+    </category-assignment>
+
+    <category-assignment category-id="sortedByBrandJob" product-id="samsung-hl61a650">
+        <position>auto</position>
+    </category-assignment>
+
+    <category-assignment category-id="sortedByBrandJob" product-id="samsung-ln46a950">
+        <position>auto</position>
+    </category-assignment>
+
+    <category-assignment category-id="sortedByBrandJob" product-id="samsung-ln52a750">
+        <position>auto</position>
+    </category-assignment>
+
+    <category-assignment category-id="sortedByBrandJob" product-id="samsung-ln37a330">
+        <position>auto</position>
+    </category-assignment>
+
+    <category-assignment category-id="sortedByBrandJob" product-id="samsung-ln55a950">
+        <position>auto</position>
+    </category-assignment>
+
+    <category-assignment category-id="sortedByBrandJob" product-id="S2510211"/>
 
     <category-assignment category-id="top-seller" product-id="25553417">
         <variation-assignments>
