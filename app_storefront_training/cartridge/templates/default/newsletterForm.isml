@@ -1,0 +1,21 @@
+<iscontent type="text/html" charset="UTF-8" compact="true"/>
+<isdecorate template="account/pt_account">
+<isinclude template="util/modules"/>
+
+
+<form action="${pdict.ContinueURL}" method="post" name="${pdict.CurrentForms.newsletter.htmlName}">
+        
+    <fieldset>                  
+        <isinputfield formfield="${pdict.CurrentForms.newsletter.firstName}" type="input" />
+        <isinputfield formfield="${pdict.CurrentForms.newsletter.lastName}" type="input" />
+        <isinputfield formfield="${pdict.CurrentForms.newsletter.email}" type="input" />
+
+        <h1>
+            <isprint value="${Resource.msgf('newsletter.error.display.message', 'forms', null, pdict.message)}" encoding="on" />
+        </h1>
+        <input type="submit" value="${Resource.msg('global.submit','locale',null)}" name="${pdict.CurrentForms.newsletter.subscribe.htmlName}"/> 
+        
+    </fieldset>
+</form>
+
+</isdecorate>

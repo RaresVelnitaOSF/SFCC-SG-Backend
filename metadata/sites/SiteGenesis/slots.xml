@@ -97,7 +97,7 @@
             <html>
                 <body xml:lang="x-default">&lt;div class="folder-slot"&gt;
     &lt;h2&gt;
-        About Demandware
+        About Salesforce Commerce Cloud
     &lt;/h2&gt;
     &lt;p&gt;
 It all started with a series of observations: eCommerce merchandising and marketing innovation is what generates the revenue, yet most operations are spending 80% of their budgets simply maintaining current infrastructure. The pace of ecommerce accelerates daily, yet most operations are scrambling to stand still. Merchandisers and marketers are supremely frustrated, spending more time chasing outsourced providers and internal IT organizations, than actually merchandising and marketing their own businesses. There had to be a better way.
@@ -167,6 +167,19 @@ Here you will find answers to your questions about shopping at our online store,
         </content>
     </slot-configuration>
 
+    <slot-configuration slot-id="cat-landing-slotbottom2" context="category" context-id="womens" configuration-id="WomensSubCatProducts" default="true" assigned-to-site="false">
+        <description>Products from sub categories of Womens</description>
+        <template>slots/product/cat_product_listing.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <products>
+                <product product-id="799927735422"/>
+                <product product-id="013742002898"/>
+                <product product-id="701643472376"/>
+            </products>
+        </content>
+    </slot-configuration>
+
     <slot-configuration slot-id="error-promo" context="global" configuration-id="Zune Promo Image" assigned-to-site="true">
         <template>slots/html/htmlslotcontainer.isml</template>
         <enabled-flag>true</enabled-flag>
@@ -177,14 +190,17 @@ Here you will find answers to your questions about shopping at our online store,
         </content>
     </slot-configuration>
 
-    <slot-configuration slot-id="cat-banner" context="category" context-id="electronics-televisions-flat-screen" configuration-id="electronics-FlatTV" default="true" assigned-to-site="true">
-        <description>Default banner for this category</description>
-        <template>slots/category/cat-banner.isml</template>
+    <slot-configuration slot-id="cart-empty" context="global" configuration-id="cartempty-lastvisited" assigned-to-site="true">
+        <description>Slot for products which displays below the empty cart message.</description>
+        <template>slots/product/product_listing.isml</template>
         <enabled-flag>true</enabled-flag>
+        <callout-msg xml:lang="x-default">Product Recommendations</callout-msg>
         <content>
-            <categories>
-                <category category-id="electronics-televisions-flat-screen"/>
-            </categories>
+            <products>
+                <product product-id="640188017003"/>
+                <product product-id="013742003048"/>
+                <product product-id="095068990509"/>
+            </products>
         </content>
     </slot-configuration>
 
@@ -199,13 +215,24 @@ Here you will find answers to your questions about shopping at our online store,
         </content>
     </slot-configuration>
 
-    <slot-configuration slot-id="cat-banner" context="category" context-id="electronics-digital-media-players" configuration-id="electronics-mp3" default="true" assigned-to-site="true">
+    <slot-configuration slot-id="cat-banner" context="category" context-id="electronics-televisions-flat-screen" configuration-id="electronics-FlatTV" default="true" assigned-to-site="true">
         <description>Default banner for this category</description>
         <template>slots/category/cat-banner.isml</template>
         <enabled-flag>true</enabled-flag>
         <content>
             <categories>
-                <category category-id="electronics-digital-media-players"/>
+                <category category-id="electronics-televisions-flat-screen"/>
+            </categories>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="cat-banner" context="category" context-id="electronics-digital-cameras" configuration-id="electronics-cameras" default="true" assigned-to-site="true">
+        <description>Default banner for this category</description>
+        <template>slots/category/cat-banner.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <categories>
+                <category category-id="electronics-digital-cameras"/>
             </categories>
         </content>
     </slot-configuration>
@@ -243,115 +270,14 @@ Here you will find answers to your questions about shopping at our online store,
         </content>
     </slot-configuration>
 
-    <slot-configuration slot-id="cat-banner" context="category" context-id="electronics-televisions-projection" configuration-id="electronics-projectionTV" default="true" assigned-to-site="true">
+    <slot-configuration slot-id="cat-banner" context="category" context-id="electronics-digital-media-players" configuration-id="electronics-mp3" default="true" assigned-to-site="true">
         <description>Default banner for this category</description>
         <template>slots/category/cat-banner.isml</template>
         <enabled-flag>true</enabled-flag>
         <content>
             <categories>
-                <category category-id="electronics-televisions-projection"/>
+                <category category-id="electronics-digital-media-players"/>
             </categories>
-        </content>
-    </slot-configuration>
-
-    <slot-configuration slot-id="cat-banner" context="category" context-id="electronics-digital-cameras" configuration-id="electronics-cameras" default="true" assigned-to-site="true">
-        <description>Default banner for this category</description>
-        <template>slots/category/cat-banner.isml</template>
-        <enabled-flag>true</enabled-flag>
-        <content>
-            <categories>
-                <category category-id="electronics-digital-cameras"/>
-            </categories>
-        </content>
-    </slot-configuration>
-
-    <slot-configuration slot-id="cat-banner" context="category" context-id="electronics-televisions" configuration-id="electronics-tv" default="true" assigned-to-site="true">
-        <description>Default banner for this category</description>
-        <template>slots/category/cat-banner.isml</template>
-        <enabled-flag>true</enabled-flag>
-        <content>
-            <categories>
-                <category category-id="electronics-televisions"/>
-            </categories>
-        </content>
-    </slot-configuration>
-
-    <slot-configuration slot-id="cat-banner" context="category" context-id="mens-accessories-luggage" configuration-id="mens-luggage" default="true" assigned-to-site="true">
-        <description>Default banner for this category</description>
-        <template>slots/category/cat-banner.isml</template>
-        <enabled-flag>true</enabled-flag>
-        <content>
-            <categories>
-                <category category-id="mens-accessories-luggage"/>
-            </categories>
-        </content>
-    </slot-configuration>
-    <slot-configuration slot-id="cat-banner" context="category" context-id="womens-accessories" configuration-id="womens-accessories" default="true" assigned-to-site="true">
-        <description>Default banner for this category</description>
-        <template>slots/category/cat-banner.isml</template>
-        <enabled-flag>true</enabled-flag>
-        <content>
-            <categories>
-                <category category-id="womens-accessories"/>
-            </categories>
-        </content>
-    </slot-configuration>
-
-   <slot-configuration slot-id="cat-banner" context="category" context-id="womens-accessories-scarves" configuration-id="womens-scarves" default="true" assigned-to-site="true">
-        <description>Default banner for this category</description>
-        <template>slots/category/cat-banner.isml</template>
-        <enabled-flag>true</enabled-flag>
-        <content>
-            <categories>
-                <category category-id="womens-accessories-scarves"/>
-            </categories>
-        </content>
-    </slot-configuration>
-
-    <slot-configuration slot-id="cat-banner" context="category" context-id="womens-clothing" configuration-id="womens-clothing" default="true" assigned-to-site="true">
-        <description>Default banner for this category</description>
-        <template>slots/category/cat-banner.isml</template>
-        <enabled-flag>true</enabled-flag>
-        <content>
-            <categories>
-                <category category-id="womens-clothing"/>
-            </categories>
-        </content>
-    </slot-configuration>
-
-    <slot-configuration slot-id="cat-banner" context="category" context-id="womens-clothing-bottoms" configuration-id="womens-bottoms" default="true" assigned-to-site="true">
-        <description>Default banner for this category</description>
-        <template>slots/category/cat-banner.isml</template>
-        <enabled-flag>true</enabled-flag>
-        <content>
-            <categories>
-                <category category-id="womens-clothing-bottoms"/>
-            </categories>
-        </content>
-    </slot-configuration>
-
-    <slot-configuration slot-id="cat-banner" context="category" context-id="womens-clothing-tops" configuration-id="womens-tops" default="true" assigned-to-site="true">
-        <description>Default banner for this category</description>
-        <template>slots/category/cat-banner.isml</template>
-        <enabled-flag>true</enabled-flag>
-        <content>
-            <categories>
-                <category category-id="womens-clothing-tops"/>
-            </categories>
-        </content>
-    </slot-configuration>
-
-    <slot-configuration slot-id="cart-empty" context="global" configuration-id="cartempty-lastvisited" assigned-to-site="true">
-        <description>Slot for products which displays below the empty cart message.</description>
-        <template>slots/product/product_listing.isml</template>
-        <enabled-flag>true</enabled-flag>
-        <callout-msg xml:lang="x-default">Product Recommendations</callout-msg>
-        <content>
-            <products>
-                <product product-id="640188017003"/>
-                <product product-id="013742003048"/>
-                <product product-id="095068990509"/>
-            </products>
         </content>
     </slot-configuration>
 
@@ -371,6 +297,17 @@ Here you will find answers to your questions about shopping at our online store,
         </content>
     </slot-configuration>
 
+    <slot-configuration slot-id="cat-banner" context="category" context-id="electronics-televisions-projection" configuration-id="electronics-projectionTV" default="true" assigned-to-site="true">
+        <description>Default banner for this category</description>
+        <template>slots/category/cat-banner.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <categories>
+                <category category-id="electronics-televisions-projection"/>
+            </categories>
+        </content>
+    </slot-configuration>
+
     <slot-configuration slot-id="cat-landing-slotbanner" context="category" context-id="electronics" configuration-id="electronics-subcategories" default="true" assigned-to-site="true">
         <description>Subcategory tiles for electronics.</description>
         <template>slots/category/category-tile.isml</template>
@@ -386,13 +323,13 @@ Here you will find answers to your questions about shopping at our online store,
         </content>
     </slot-configuration>
 
-    <slot-configuration slot-id="cat-banner" context="category" context-id="womens-clothing-feeling-red" configuration-id="womens-feelingred" default="true" assigned-to-site="true">
+    <slot-configuration slot-id="cat-banner" context="category" context-id="electronics-televisions" configuration-id="electronics-tv" default="true" assigned-to-site="true">
         <description>Default banner for this category</description>
         <template>slots/category/cat-banner.isml</template>
         <enabled-flag>true</enabled-flag>
         <content>
             <categories>
-                <category category-id="womens-clothing-feeling-red"/>
+                <category category-id="electronics-televisions"/>
             </categories>
         </content>
     </slot-configuration>
@@ -462,22 +399,6 @@ Here you will find answers to your questions about shopping at our online store,
         </content>
     </slot-configuration>
 
-    <slot-configuration slot-id="home-bottom-right" context="global" configuration-id="this-weeks-deals" default="true" assigned-to-site="true">
-        <description>Product Carousel of This Weeks Deals</description>
-        <template>slots/product/homerightcarousel.isml</template>
-        <enabled-flag>true</enabled-flag>
-        <callout-msg xml:lang="x-default">&lt;h2&gt;This Weeks&lt;/h2&gt;&lt;h3&gt;Deals&lt;/h3&gt;</callout-msg>
-        <content>
-            <products>
-                <product product-id="25591535"/>
-                <product product-id="640188017003"/>
-                <product product-id="54736828"/>
-                <product product-id="25590891"/>
-                <product product-id="793775370033"/>
-            </products>
-        </content>
-    </slot-configuration>
-
     <slot-configuration slot-id="home-main" context="global" configuration-id="homepage-jquery-cycle" default="true" assigned-to-site="true">
         <description>Homepage Jquery Cycle</description>
         <template>slots/content/homepage/homepageslider.isml</template>
@@ -510,6 +431,17 @@ Here you will find answers to your questions about shopping at our online store,
         </content>
     </slot-configuration>
 
+    <slot-configuration slot-id="cat-banner" context="category" context-id="mens-clothing" configuration-id="mens-clothing" default="true" assigned-to-site="true">
+        <description>Default banner for this category</description>
+        <template>slots/category/cat-banner.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <categories>
+                <category category-id="mens-clothing"/>
+            </categories>
+        </content>
+    </slot-configuration>
+
     <slot-configuration slot-id="cat-banner" context="category" context-id="mens-accessories-gloves" configuration-id="mens-gloves" default="true" assigned-to-site="true">
         <description>Default banner for this category</description>
         <template>slots/category/cat-banner.isml</template>
@@ -517,6 +449,16 @@ Here you will find answers to your questions about shopping at our online store,
         <content>
             <categories>
                 <category category-id="mens-accessories-gloves"/>
+            </categories>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="cat-banner" context="category" context-id="mens-clothing-jackets" configuration-id="mens-jackets" default="true" assigned-to-site="true">
+        <template>slots/category/cat-banner.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <categories>
+                <category category-id="mens-clothing-jackets"/>
             </categories>
         </content>
     </slot-configuration>
@@ -532,24 +474,13 @@ Here you will find answers to your questions about shopping at our online store,
         </content>
     </slot-configuration>
 
-    <slot-configuration slot-id="cat-banner" context="category" context-id="mens-accessories-ties" configuration-id="mens-ties" default="true" assigned-to-site="true">
+    <slot-configuration slot-id="cat-banner" context="category" context-id="mens-clothing-pants" configuration-id="mens-pants" default="true" assigned-to-site="true">
         <description>Default banner for this category</description>
         <template>slots/category/cat-banner.isml</template>
         <enabled-flag>true</enabled-flag>
         <content>
             <categories>
-                <category category-id="mens-accessories-ties"/>
-            </categories>
-        </content>
-    </slot-configuration>
-
-    <slot-configuration slot-id="cat-banner" context="category" context-id="mens-clothing" configuration-id="mens-clothing" default="true" assigned-to-site="true">
-        <description>Default banner for this category</description>
-        <template>slots/category/cat-banner.isml</template>
-        <enabled-flag>true</enabled-flag>
-        <content>
-            <categories>
-                <category category-id="mens-clothing"/>
+                <category category-id="mens-clothing-pants"/>
             </categories>
         </content>
     </slot-configuration>
@@ -565,27 +496,6 @@ Here you will find answers to your questions about shopping at our online store,
         </content>
     </slot-configuration>
 
-    <slot-configuration slot-id="cat-banner" context="category" context-id="mens-clothing-jackets" configuration-id="mens-jackets" default="true" assigned-to-site="true">
-        <template>slots/category/cat-banner.isml</template>
-        <enabled-flag>true</enabled-flag>
-        <content>
-            <categories>
-                <category category-id="mens-clothing-jackets"/>
-            </categories>
-        </content>
-    </slot-configuration>
-
-    <slot-configuration slot-id="cat-banner" context="category" context-id="mens-clothing-pants" configuration-id="mens-pants" default="true" assigned-to-site="true">
-        <description>Default banner for this category</description>
-        <template>slots/category/cat-banner.isml</template>
-        <enabled-flag>true</enabled-flag>
-        <content>
-            <categories>
-                <category category-id="mens-clothing-pants"/>
-            </categories>
-        </content>
-    </slot-configuration>
-
     <slot-configuration slot-id="cat-banner" context="category" context-id="mens-clothing-shorts" configuration-id="mens-shorts" default="true" assigned-to-site="true">
         <description>Default banner for this category</description>
         <template>slots/category/cat-banner.isml</template>
@@ -593,17 +503,6 @@ Here you will find answers to your questions about shopping at our online store,
         <content>
             <categories>
                 <category category-id="mens-clothing-shorts"/>
-            </categories>
-        </content>
-    </slot-configuration>
-
-    <slot-configuration slot-id="cat-banner" context="category" context-id="mens-clothing-suits" configuration-id="mens-suits" default="true" assigned-to-site="true">
-        <description>Default banner for this category</description>
-        <template>slots/category/cat-banner.isml</template>
-        <enabled-flag>true</enabled-flag>
-        <content>
-            <categories>
-                <category category-id="mens-clothing-suits"/>
             </categories>
         </content>
     </slot-configuration>
@@ -620,6 +519,50 @@ Here you will find answers to your questions about shopping at our online store,
                 <category category-id="mens-clothing-dress-shirts"/>
                 <category category-id="mens-clothing-pants"/>
                 <category category-id="mens-accessories"/>
+            </categories>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="cat-banner" context="category" context-id="mens-clothing-suits" configuration-id="mens-suits" default="true" assigned-to-site="true">
+        <description>Default banner for this category</description>
+        <template>slots/category/cat-banner.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <categories>
+                <category category-id="mens-clothing-suits"/>
+            </categories>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="cat-banner" context="category" context-id="mens-accessories-ties" configuration-id="mens-ties" default="true" assigned-to-site="true">
+        <description>Default banner for this category</description>
+        <template>slots/category/cat-banner.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <categories>
+                <category category-id="mens-accessories-ties"/>
+            </categories>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="cat-banner" context="category" context-id="newarrivals-electronics" configuration-id="newarrivals-electronics" default="true" assigned-to-site="true">
+        <description>Default banner for this catagory</description>
+        <template>slots/category/cat-banner.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <categories>
+                <category category-id="newarrivals-electronics"/>
+            </categories>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="cat-banner" context="category" context-id="newarrivals-mens" configuration-id="newarrivals-men" default="true" assigned-to-site="true">
+        <description>Default banner for this category</description>
+        <template>slots/category/cat-banner.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <categories>
+                <category category-id="newarrivals-mens"/>
             </categories>
         </content>
     </slot-configuration>
@@ -651,6 +594,17 @@ Here you will find answers to your questions about shopping at our online store,
         </content>
     </slot-configuration>
 
+    <slot-configuration slot-id="cat-banner" context="category" context-id="newarrivals-womens" configuration-id="newarrivals-women" default="true" assigned-to-site="true">
+        <description>Default banner for this category</description>
+        <template>slots/category/cat-banner.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <categories>
+                <category category-id="newarrivals-womens"/>
+            </categories>
+        </content>
+    </slot-configuration>
+
     <slot-configuration slot-id="cat-landing-slotbottom" context="category" context-id="newarrivals" configuration-id="newarrivals-womens-products" default="true" assigned-to-site="true">
         <description>New Arrival Products for Womens</description>
         <template>slots/product/product_listing.isml</template>
@@ -668,39 +622,6 @@ Here you will find answers to your questions about shopping at our online store,
         </content>
     </slot-configuration>
 
-    <slot-configuration slot-id="cat-banner" context="category" context-id="newarrivals-mens" configuration-id="newarrivals-men" default="true" assigned-to-site="true">
-        <description>Default banner for this category</description>
-        <template>slots/category/cat-banner.isml</template>
-        <enabled-flag>true</enabled-flag>
-        <content>
-            <categories>
-                <category category-id="newarrivals-mens"/>
-            </categories>
-        </content>
-    </slot-configuration>
-
-    <slot-configuration slot-id="cat-banner" context="category" context-id="newarrivals-electronics" configuration-id="newarrivals-electronics" default="true" assigned-to-site="true">
-        <description>Default banner for this catagory</description>
-        <template>slots/category/cat-banner.isml</template>
-        <enabled-flag>true</enabled-flag>
-        <content>
-            <categories>
-                <category category-id="newarrivals-electronics"/>
-            </categories>
-        </content>
-    </slot-configuration>
-
-    <slot-configuration slot-id="cat-banner" context="category" context-id="newarrivals-womens" configuration-id="newarrivals-women" default="true" assigned-to-site="true">
-        <description>Default banner for this category</description>
-        <template>slots/category/cat-banner.isml</template>
-        <enabled-flag>true</enabled-flag>
-        <content>
-            <categories>
-                <category category-id="newarrivals-womens"/>
-            </categories>
-        </content>
-    </slot-configuration>
-
     <slot-configuration slot-id="search-result-banner" context="global" configuration-id="search-results-banner" default="true" assigned-to-site="true">
         <description>Slot Banner that displays above search results</description>
         <template>slots/html/htmlslotcontainer.isml</template>
@@ -714,14 +635,19 @@ Here you will find answers to your questions about shopping at our online store,
         </content>
     </slot-configuration>
 
-    <slot-configuration slot-id="cat-banner" context="category" context-id="womens-accessories-shoes" configuration-id="womens-shoes-cat-banner" default="true" assigned-to-site="true">
-        <description>This is the default banner for the womens shoes banner.</description>
-        <template>slots/category/cat-banner.isml</template>
+    <slot-configuration slot-id="home-bottom-right" context="global" configuration-id="this-weeks-deals" default="true" assigned-to-site="true">
+        <description>Product Carousel of This Weeks Deals</description>
+        <template>slots/product/homerightcarousel.isml</template>
         <enabled-flag>true</enabled-flag>
+        <callout-msg xml:lang="x-default">&lt;h2&gt;This Weeks&lt;/h2&gt;&lt;h3&gt;Deals&lt;/h3&gt;</callout-msg>
         <content>
-            <categories>
-                <category category-id="womens-accessories-shoes"/>
-            </categories>
+            <products>
+                <product product-id="25591535"/>
+                <product product-id="640188017003"/>
+                <product product-id="54736828"/>
+                <product product-id="25590891"/>
+                <product product-id="793775370033"/>
+            </products>
         </content>
     </slot-configuration>
 
@@ -747,6 +673,50 @@ Here you will find answers to your questions about shopping at our online store,
         </content>
     </slot-configuration>
 
+    <slot-configuration slot-id="cat-banner" context="category" context-id="womens-accessories" configuration-id="womens-accessories" default="true" assigned-to-site="true">
+        <description>Default banner for this category</description>
+        <template>slots/category/cat-banner.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <categories>
+                <category category-id="womens-accessories"/>
+            </categories>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="cat-banner" context="category" context-id="womens-clothing-bottoms" configuration-id="womens-bottoms" default="true" assigned-to-site="true">
+        <description>Default banner for this category</description>
+        <template>slots/category/cat-banner.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <categories>
+                <category category-id="womens-clothing-bottoms"/>
+            </categories>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="cat-banner" context="category" context-id="womens-jewlery-bracelets" configuration-id="womens-bracelets" default="true" assigned-to-site="true">
+        <description>Default banner for this category</description>
+        <template>slots/category/cat-banner.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <categories>
+                <category category-id="womens-jewlery-bracelets"/>
+            </categories>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="cat-banner" context="category" context-id="womens-clothing" configuration-id="womens-clothing" default="true" assigned-to-site="true">
+        <description>Default banner for this category</description>
+        <template>slots/category/cat-banner.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <categories>
+                <category category-id="womens-clothing"/>
+            </categories>
+        </content>
+    </slot-configuration>
+
     <slot-configuration slot-id="cat-banner" context="category" context-id="womens-clothing-dresses" configuration-id="womens-dresses" default="true" assigned-to-site="true">
         <description>Default banner for this category</description>
         <template>slots/category/cat-banner.isml</template>
@@ -754,6 +724,27 @@ Here you will find answers to your questions about shopping at our online store,
         <content>
             <categories>
                 <category category-id="womens-clothing-dresses"/>
+            </categories>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="cat-banner" context="category" context-id="womens-jewelry-earrings" configuration-id="womens-earrings" default="true" assigned-to-site="true">
+        <template>slots/category/cat-banner.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <categories>
+                <category category-id="womens-jewelry-earrings"/>
+            </categories>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="cat-banner" context="category" context-id="womens-clothing-feeling-red" configuration-id="womens-feelingred" default="true" assigned-to-site="true">
+        <description>Default banner for this category</description>
+        <template>slots/category/cat-banner.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <categories>
+                <category category-id="womens-clothing-feeling-red"/>
             </categories>
         </content>
     </slot-configuration>
@@ -775,27 +766,6 @@ Here you will find answers to your questions about shopping at our online store,
         <content>
             <categories>
                 <category category-id="womens-jewelry"/>
-            </categories>
-        </content>
-    </slot-configuration>
-
-    <slot-configuration slot-id="cat-banner" context="category" context-id="womens-jewelry-earrings" configuration-id="womens-earrings" default="true" assigned-to-site="true">
-        <template>slots/category/cat-banner.isml</template>
-        <enabled-flag>true</enabled-flag>
-        <content>
-            <categories>
-                <category category-id="womens-jewelry-earrings"/>
-            </categories>
-        </content>
-    </slot-configuration>
-
-    <slot-configuration slot-id="cat-banner" context="category" context-id="womens-jewlery-bracelets" configuration-id="womens-bracelets" default="true" assigned-to-site="true">
-        <description>Default banner for this category</description>
-        <template>slots/category/cat-banner.isml</template>
-        <enabled-flag>true</enabled-flag>
-        <content>
-            <categories>
-                <category category-id="womens-jewlery-bracelets"/>
             </categories>
         </content>
     </slot-configuration>
@@ -822,6 +792,28 @@ Here you will find answers to your questions about shopping at our online store,
         </content>
     </slot-configuration>
 
+    <slot-configuration slot-id="cat-banner" context="category" context-id="womens-accessories-scarves" configuration-id="womens-scarves" default="true" assigned-to-site="true">
+        <description>Default banner for this category</description>
+        <template>slots/category/cat-banner.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <categories>
+                <category category-id="womens-accessories-scarves"/>
+            </categories>
+        </content>
+    </slot-configuration>
+
+    <slot-configuration slot-id="cat-banner" context="category" context-id="womens-accessories-shoes" configuration-id="womens-shoes-cat-banner" default="true" assigned-to-site="true">
+        <description>This is the default banner for the womens shoes banner.</description>
+        <template>slots/category/cat-banner.isml</template>
+        <enabled-flag>true</enabled-flag>
+        <content>
+            <categories>
+                <category category-id="womens-accessories-shoes"/>
+            </categories>
+        </content>
+    </slot-configuration>
+
     <slot-configuration slot-id="cat-landing-slotbottom" context="category" context-id="womens" configuration-id="womens-subcategories" default="true" assigned-to-site="true">
         <description>Default slot to link to sub-categories under Womens</description>
         <template>slots/category/category-tile.isml</template>
@@ -835,16 +827,14 @@ Here you will find answers to your questions about shopping at our online store,
         </content>
     </slot-configuration>
 
-    <slot-configuration slot-id="cat-landing-slotbottom2" context="category" context-id="womens" configuration-id="WomensSubCatProducts" default="true" assigned-to-site="false">
-        <description>Products from sub categories of Womens</description>
-        <template>slots/product/cat_product_listing.isml</template>
+    <slot-configuration slot-id="cat-banner" context="category" context-id="womens-clothing-tops" configuration-id="womens-tops" default="true" assigned-to-site="true">
+        <description>Default banner for this category</description>
+        <template>slots/category/cat-banner.isml</template>
         <enabled-flag>true</enabled-flag>
         <content>
-            <products>
-                <product product-id="799927735422"/>
-                <product product-id="013742002898"/>
-                <product product-id="701643472376"/>
-            </products>
+            <categories>
+                <category category-id="womens-clothing-tops"/>
+            </categories>
         </content>
     </slot-configuration>
 
