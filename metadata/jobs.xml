@@ -1,2 +1,137 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jobs xmlns="http://www.demandware.com/xml/impex/jobs/2015-07-01"/>
+<jobs xmlns="http://www.demandware.com/xml/impex/jobs/2015-07-01">
+    <job job-id="exportCatalog" priority="0">
+        <description>Export the catalog</description>
+        <parameters/>
+        <flow>
+            <context site-id="Sites"/>
+            <step step-id="exportMainCatalog" type="ExportCatalog" enforce-restart="false">
+                <description>Exports main catalog</description>
+                <parameters>
+                    <parameter name="CatalogID">storefront-catalog-m-en</parameter>
+                    <parameter name="ExportCategories">true</parameter>
+                    <parameter name="ExportProducts">true</parameter>
+                    <parameter name="ExportCategoryAssignments">true</parameter>
+                    <parameter name="ExportProductOptions">true</parameter>
+                    <parameter name="ExportRecommendations">true</parameter>
+                    <parameter name="ExportVariationAttributes">true</parameter>
+                    <parameter name="FileNamePrefix">rares</parameter>
+                    <parameter name="OverwriteExportFile">true</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-once enabled="false">
+                <date>2020-03-25Z</date>
+                <time>15:12:47.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="AssignByBrand" priority="0">
+        <description>Gets all products that have a specific brand</description>
+        <parameters>
+            <parameter name="osfglobalservices49-alliance-prtnr-na06-dw">app_storefront_custom/cartridge/scripts/job/assignProductByBrand.js</parameter>
+        </parameters>
+        <flow>
+            <context site-id="RefArch"/>
+            <step step-id="getByBrand" type="ExecuteScriptModule" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="ExecuteScriptModule.Module" job-parameter-ref="osfglobalservices49-alliance-prtnr-na06-dw"/>
+                    <parameter name="ExecuteScriptModule.FunctionName">execute</parameter>
+                    <parameter name="ExecuteScriptModule.Transactional">false</parameter>
+                    <parameter name="brand">shit</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-once enabled="false">
+                <date>2020-03-26Z</date>
+                <time>07:15:15.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="RebuildURLs" priority="0">
+        <description/>
+        <parameters/>
+        <split sequential="false">
+            <contexts template-ref="template_40">
+                <context site-id="RefArch"/>
+                <context site-id="RefArchGlobal"/>
+            </contexts>
+            <flow-template template-id="template_40">
+                <step step-id="RebuildURLs" type="UpdateStorefrontURLs" enforce-restart="false">
+                    <description/>
+                    <parameters/>
+                </step>
+            </flow-template>
+        </split>
+        <rules/>
+        <triggers>
+            <run-once enabled="false">
+                <date>2018-06-25Z</date>
+                <time>05:38:35.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="Reindex" priority="0">
+        <description/>
+        <parameters/>
+        <split sequential="false">
+            <contexts template-ref="template_45">
+                <context site-id="RefArch"/>
+                <context site-id="RefArchGlobal"/>
+            </contexts>
+            <flow-template template-id="template_45">
+                <step step-id="Reindex" type="SearchReindex" enforce-restart="false">
+                    <description/>
+                    <parameters>
+                        <parameter name="Product related search indexes">true</parameter>
+                        <parameter name="Active data search index">true</parameter>
+                        <parameter name="Content search index">true</parameter>
+                        <parameter name="Indexer Type">Full Index Rebuild</parameter>
+                    </parameters>
+                </step>
+            </flow-template>
+        </split>
+        <rules/>
+        <triggers>
+            <run-once enabled="false">
+                <date>2018-06-25Z</date>
+                <time>05:36:56.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="exportOrders" priority="0">
+        <description>Exports order in XML format</description>
+        <parameters>
+            <parameter name="osfglobalservices49-alliance-prtnr-na06-dw">app_storefront_custom/cartridge/scripts/job/exportOrders.js</parameter>
+        </parameters>
+        <flow>
+            <context site-id="RefArch"/>
+            <step step-id="exportOrders" type="ExecuteScriptModule" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="ExecuteScriptModule.Module" job-parameter-ref="osfglobalservices49-alliance-prtnr-na06-dw"/>
+                    <parameter name="ExecuteScriptModule.FunctionName">execute</parameter>
+                    <parameter name="ExecuteScriptModule.Transactional">true</parameter>
+                    <parameter name="folderDestination">exports</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-once enabled="false">
+                <date>2020-03-27Z</date>
+                <time>07:39:46.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+</jobs>
