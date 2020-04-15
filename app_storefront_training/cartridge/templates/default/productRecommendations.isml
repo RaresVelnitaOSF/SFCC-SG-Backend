@@ -1,0 +1,7 @@
+<ul class="search-result-items tiles-container">
+    <isloop items="${pdict.productsFound}" var="product">
+        <li class="grid-tile">
+            <isinclude url="${URLUtils.url('Product-HitTile', 'pid' , product.productID)}"/>
+        </li>
+    </isloop>
+</ul>
