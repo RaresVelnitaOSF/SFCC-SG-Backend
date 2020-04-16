@@ -19,6 +19,10 @@
             <isinclude template="search/simplesearch"/>
         </div>
 
+        <div class="header-search">
+            <isinclude template="search/customSearch"/>
+        </div>
+
         <iscomment>INCLUDE: category menu</iscomment>
         <isinclude url="${URLUtils.url('Home-IncludeHeaderMenu')}"/>
 
