@@ -1,2 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<services xmlns="http://www.demandware.com/xml/impex/services/2014-09-26"/>
+<services xmlns="http://www.demandware.com/xml/impex/services/2014-09-26">
+    <service-credential service-credential-id="FlickrCredentials">
+        <url>https://www.flickr.com/services/feeds/photos_public.gne</url>
+        <user-id>default</user-id>
+        <password masked="true">********</password>
+    </service-credential>
+
+    <service-credential service-credential-id="productSearchCredentials">
+        <url>https://osfglobalservices49-alliance-prtnr-na06-dw.demandware.net/s/RefArch/dw/shop/v20_4/product_search</url>
+        <user-id>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</user-id>
+        <password masked="true">********</password>
+    </service-credential>
+
+    <service-profile service-profile-id="flickr">
+        <timeout-millis>2000</timeout-millis>
+        <rate-limit-enabled>true</rate-limit-enabled>
+        <rate-limit-calls>5</rate-limit-calls>
+        <rate-limit-millis>7000</rate-limit-millis>
+        <cb-enabled>true</cb-enabled>
+        <cb-calls>5</cb-calls>
+        <cb-millis>5000</cb-millis>
+    </service-profile>
+
+    <service-profile service-profile-id="productSearch">
+        <timeout-millis>2000</timeout-millis>
+        <rate-limit-enabled>true</rate-limit-enabled>
+        <rate-limit-calls>5</rate-limit-calls>
+        <rate-limit-millis>7000</rate-limit-millis>
+        <cb-enabled>true</cb-enabled>
+        <cb-calls>5</cb-calls>
+        <cb-millis>5000</cb-millis>
+    </service-profile>
+
+    <service service-id="app_storefront_custom.https.get.flickrFeed">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>flickr</log-prefix>
+        <comm-log-enabled>false</comm-log-enabled>
+        <force-prd-enabled>true</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>flickr</profile-id>
+        <credential-id>FlickrCredentials</credential-id>
+    </service>
+
+    <service service-id="app_storefront_custom.https.get.productSearch">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>searchService</log-prefix>
+        <comm-log-enabled>true</comm-log-enabled>
+        <force-prd-enabled>true</force-prd-enabled>
+        <mock-mode-enabled>false</mock-mode-enabled>
+        <profile-id>productSearch</profile-id>
+        <credential-id>productSearchCredentials</credential-id>
+    </service>
+
+</services>
