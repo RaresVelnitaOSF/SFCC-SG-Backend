@@ -49,7 +49,6 @@ function initializeEvents() {
             e.preventDefault();
             // see if someone is logged in by selecting the Login a
             var check = $('a[title="Go to: Login"]').text();
-            console.log(check)
             if (check) {
                 dialog.open({
                     url: '/on/demandware.store/Sites-SiteGenesis-Site/default/Confirmation-WishlistModal',
