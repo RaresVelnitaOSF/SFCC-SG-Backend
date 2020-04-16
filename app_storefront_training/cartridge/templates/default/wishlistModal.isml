@@ -1,0 +1,3 @@
+<h2>
+    <isprint value="${Resource.msgf('wishlist.modal.title','messages',null)}" encoding="on" />
+</h2>
