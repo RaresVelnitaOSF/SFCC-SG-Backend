@@ -1,0 +1,8 @@
+<iscontent type="text/html" charset="UTF-8" compact="true"/>
+<isdecorate template="account/pt_account">
+
+    <isloop items="${pdict.filteredJson}" var="item">
+        <img class="jsonPaceHolderImage" src="${item.url}" alt="${item.title}" title="Album id is: ${item.albumId}" />
+    </isloop>
+
+</isdecorate>

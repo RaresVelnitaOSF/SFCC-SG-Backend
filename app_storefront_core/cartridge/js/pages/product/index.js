@@ -37,13 +37,34 @@ function initializeEvents() {
     }
 
     // Add to Wishlist and Add to Gift Registry links behaviors
-    $pdpMain.on('click', '[data-action="wishlist"], [data-action="gift-registry"]', function () {
+    $pdpMain.on('click', '[data-action="wishlist"], [data-action="gift-registry"]', function (e) {
         var data = util.getQueryStringParams($('.pdpForm').serialize());
         if (data.cartAction) {
             delete data.cartAction;
         }
         var url = util.appendParamsToUrl(this.href, data);
         this.setAttribute('href', url);
+        var dataAction = $(this).attr('data-action')
+        if (dataAction == 'wishlist') {
+            e.preventDefault();
+            // see if someone is logged in by selecting the Login a
+            var check = $('a[title="Go to: Login"]').text();
+            if (check) {
+                dialog.open({
+                    url: '/on/demandware.store/Sites-SiteGenesis-Site/default/Confirmation-WishlistModal',
+                    options: {
+                        buttons: [{
+                            text: Resources.TRACKING_CONSENT,
+                            click: function () {
+                                window.location.href = $(this).attr('href');
+                            }
+                        }]
+                    }
+                });
+            } else {
+                window.location.href = $(this).attr('href');
+            }
+        }
     });
 
     // product options
