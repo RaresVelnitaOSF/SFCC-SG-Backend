@@ -11,50 +11,45 @@ function addDirectlyToCart() {
     var ProductMgr = require("dw/catalog/ProductMgr");
     var productAPI = ProductMgr.getProduct(productID);
 
-    if (productAPI) {
-        if (productAPI.getAvailabilityModel().inStock) {
-            if (!productAPI.isMaster()){
-                if (!productAPI.isProductSet()){
-                    if (productAPI.isOnline()){
-                        response.renderJSON({
-                            success: true
-                        });
-                        return
-                    } else {
-                        response.renderJSON({
-                            success: false,
-                            errorMessage: 'Product is not Online'
-                        });
-                        return
-                    }
-                } else {
-                    response.renderJSON({
-                        success: false,
-                        errorMessage: 'Product is Product set'
-                    });
-                    return
-                }
-            } else {
-                response.renderJSON({
-                    success: false,
-                    errorMessage: 'Product is Master'
-                });
-                return
-            }
-        } else {
-            response.renderJSON({
-                success: false,
-                errorMessage: 'Product is not in stock'
-            });
-            return;
-        }
-    } else {
+    if (!productAPI) {
         response.renderJSON({
             success: false,
             errorMessage: 'Product does not exist'
         });
         return;
-    }
+    };
+    if (!productAPI.getAvailabilityModel().inStock) {
+        response.renderJSON({
+            success: false,
+            errorMessage: 'Product is not in stock'
+        });
+        return;
+    };
+    if (productAPI.isMaster()){
+        response.renderJSON({
+            success: false,
+            errorMessage: 'Product is Master'
+        });
+        return
+    };
+    if (productAPI.isProductSet()){
+        response.renderJSON({
+            success: false,
+            errorMessage: 'Product is Product set'
+        });
+        return
+    };
+    if (!productAPI.isOnline()){
+        response.renderJSON({
+            success: false,
+            errorMessage: 'Product is not Online'
+        });
+        return
+    };
+    response.renderJSON({
+        success: true
+    });
+    return
 }
 
 function getModal() {
