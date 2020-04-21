@@ -87,7 +87,21 @@
     "vinyl-transform": "^1.0.0",
     "watchify": "^3.11.1",
     "webdriverio": "^5.12.5",
-    "xml2js": "^0.4.19"
+    "xml2js": "^0.4.19",
+    "eslint-config-airbnb-base": "12.1.0",
+    "eslint-plugin-import": "^2.12.0",
+    "gulp-debug": "^2.1.2",
+    "gulp-eslint-if-fixed": "^1.0.0",
+    "gulp-filter": "^1.0.2",
+    "gulp-jscs": "^1.1.0",
+    "gulp-jshint": "^1.8.4",
+    "gulp-stylelint": "^3.4.0",
+    "gulp.spritesmith": "^3.3.0",
+    "run-sequence": "^1.2.2",
+    "stylelint": "^7.4.2",
+    "stylelint-config-standard": "^16.0.0",
+    "xtend": "^4.0.0",
+    "qs": "^6.2.1"
   },
   "scripts": {
     "test:unit": "node bin/test.js",
@@ -100,7 +114,10 @@
     "build:watch": "npm run js -- -w & npm run css -- -w",
     "preversion": "version > old_version",
     "version": "node bin/version.js && rm old_version && git add .",
-    "doc": "sh bin/doc.sh"
+    "doc": "sh bin/doc.sh",
+    "gulp": "gulp",
+    "test": "mocha",
+    "coverage": "istanbul cover -x \"**/modules/lib/**\" ./node_modules/mocha/bin/_mocha"
   },
   "repository": {
     "type": "git",

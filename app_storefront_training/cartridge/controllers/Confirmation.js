@@ -5,6 +5,6 @@ var ISML = require("dw/template/ISML");
 
 function displayWishlistModal() {
     ISML.renderTemplate("wishlistModal");
-};
+}
 
 exports.WishlistModal = guard.ensure(["get"], displayWishlistModal);

@@ -4,7 +4,6 @@ var ISML = require("dw/template/ISML");
 var guard = require("app_storefront_controllers/cartridge/scripts/guard"); 
 var ProductMgr = require("dw/catalog/ProductMgr");
 var Resources = require("dw/web/Resource");
-var request;
 
 function start() { 
     var pid = request.httpParameterMap.pid.stringValue;

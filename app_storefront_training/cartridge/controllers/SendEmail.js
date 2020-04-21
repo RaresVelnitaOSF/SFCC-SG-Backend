@@ -1,10 +1,6 @@
 "use strict";
 
 var guard = require("app_storefront_controllers/cartridge/scripts/guard");
-var ISML = require("dw/template/ISML");
-
-var request;
-
 
 function sendWishlistEmail() {
     var productID = request.httpParameterMap.productID.stringValue;

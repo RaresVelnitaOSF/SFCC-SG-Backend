@@ -30,10 +30,10 @@ function execute(parameters) {
     xsw.writeStartElement("catalog");
     xsw.writeAttribute("xmlns", "http://www.demandware.com/xml/impex/catalog/2006-10-31");
     xsw.writeAttribute("catalog-id", "storefront-catalog-en");
-    for (var i = 0; i < productIDS.length; i++) {
+    for (var j = 0; j < productIDS.length; j++) {
         xsw.writeStartElement("category-assignment");
         xsw.writeAttribute("category-id", "sortedByBrandJob");
-        xsw.writeAttribute("product-id", productIDS[i]);
+        xsw.writeAttribute("product-id", productIDS[j]);
         xsw.writeEndElement();
     }
     xsw.writeEndElement();

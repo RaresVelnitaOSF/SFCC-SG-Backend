@@ -74,8 +74,8 @@ function execute(parameters) {
     } else {
         var XMLContent = [];
 
-        for (var i = 0; i < listOfOrders.length; i++) {
-            var orderAPI = listOfOrders[i];
+        for (var j = 0; j < listOfOrders.length; j++) {
+            var orderAPI = listOfOrders[j];
             var orderWithDetasils = getOrderDetails(orderAPI);
             XMLContent.push(orderWithDetasils);
         }
@@ -83,8 +83,8 @@ function execute(parameters) {
         xsw.writeStartDocument();
         xsw.writeStartElement("orders");
         xsw.writeAttribute("xmlns", "http://www.demandware.com/xml/impex/order/2006-10-31");
-        for (var i = 0; i < XMLContent.length; i++) {
-            var order = XMLContent[i];
+        for (var k = 0; k < XMLContent.length; k++) {
+            var order = XMLContent[k];
             xsw.writeStartElement("order");
             xsw.writeAttribute("order-no", order.orderNumber);
             xsw.writeStartElement("order-date");
@@ -104,8 +104,8 @@ function execute(parameters) {
             xsw.writeEndElement();
     
             xsw.writeStartElement("product-lineitems");
-            for (var j = 0; j < order.orderIDsOfProductsBought.length; j++) {
-                var productID = order.orderIDsOfProductsBought[j];
+            for (var l = 0; l < order.orderIDsOfProductsBought.length; l++) {
+                var productID = order.orderIDsOfProductsBought[l];
                 xsw.writeStartElement("product-lineitem");
                 xsw.writeStartElement("product-id");
                 xsw.writeCharacters(productID);
