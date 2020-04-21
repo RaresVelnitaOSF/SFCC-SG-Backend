@@ -1,0 +1,2 @@
+<input type="text" id="customSearchValue" value="" placeholder="${Resource.msg('label.add.directly.to.card', 'messages', null)}" />
+<button id="customSearchButton" type="submit"><span class="visually-hidden">${Resource.msg('global.search', 'locale', null)}</span><i class="fa fa-search"></i></button>
