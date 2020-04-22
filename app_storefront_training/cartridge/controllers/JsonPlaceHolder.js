@@ -10,7 +10,7 @@ function getPhotos() {
     var apiHelpers = require("../scripts/apiHelpers");
 
     httpClient.open("GET", "https://jsonplaceholder.typicode.com/photos");
-    httpClient.setTimeout(3000);
+    httpClient.setTimeout(5000);
     httpClient.send();
     if (httpClient.statusCode == 200) {
         var message = httpClient.text;
@@ -26,12 +26,15 @@ function getPhotos() {
         }
         catch (e) {
             if (e) {
-                ISML.renderTemplate("error/notfound");
+                ISML.renderTemplate("api/jsonPlaceHolder", {
+                    error : "An error occured while parsing the text response"
+                });
             }
         }
     } else {
-        response.setStatus(httpClient.statusCode);
-        ISML.renderTemplate("error/notfound");
+        ISML.renderTemplate("api/jsonPlaceHolder", {
+            error : "An error occurred with status code "+ httpClient.statusCode + " - " + httpClient.errorText
+        });
     }
 }
 
