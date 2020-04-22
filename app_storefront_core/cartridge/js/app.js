@@ -157,7 +157,8 @@ var pages = {
     search: require('./pages/search'),
     storefront: require('./pages/storefront'),
     wishlist: require('./pages/wishlist'),
-    storelocator: require('./pages/storelocator')
+    storelocator: require('./pages/storelocator'),
+    addDirectlyToCart: require('./pages/addDirectlyToCart')
 };
 
 var app = {

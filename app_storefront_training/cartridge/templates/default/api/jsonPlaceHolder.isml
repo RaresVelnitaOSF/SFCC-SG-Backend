@@ -1,0 +1,18 @@
+<iscontent type="text/html" charset="UTF-8" compact="true"/>
+<isdecorate template="account/pt_account">
+
+    <isif condition="${pdict.error}">
+        <p>
+            <isprint value="${pdict.error}"/>
+        </p>
+    <iselse/>
+        <isif condition="${typeof(pdict.filteredJson) === 'string'}">
+            <isprint value="${pdict.filteredJson}"/>
+        <iselse/>
+            <isloop items="${pdict.filteredJson}" var="item">
+                <img class="jsonPaceHolderImage" src="${item.url}" alt="${item.title}" title="Album id is: ${item.albumId}" />
+            </isloop>
+        </isif>
+    </isif>
+
+</isdecorate>

@@ -1,0 +1,25 @@
+<iscontent type="text/html" charset="UTF-8" compact="true"/>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>${Resource.msg('newsletter.signup.email.title','email',null)}</title>
+</head>
+<body>
+    <h3>
+        <isprint value="${Resource.msgf('newsletter.email.header', 'email', null, pdict.context.customerName)}" encoding="on" />
+    </h3>
+    <p>
+        <isprint value="${Resource.msg('newsletter.email.body', 'email', null)}" encoding="on" />
+    </p>
+
+    <isif condition=${pdict.context.couponAvailable}>
+        <p>
+            <isprint value=${Resource.msgf('newsletter.email.text.coupon', 'email', null, pdict.context.coupon)} encoding="off" />
+        </p>
+    <iselse/>
+        <p>
+            <isprint value=${Resource.msg('newsletter.email.text.apology', 'email', null)} encoding="on" />
+        </p>
+</isif>
+</body>
+</html>
